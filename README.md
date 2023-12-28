@@ -1,5 +1,6 @@
 # NO English Mode!
 防止微软拼音输入法启动切换到英文模式
+
 ![Screenshot](assets/screenshot.png)
 
 # Install
