@@ -24,16 +24,4 @@ fn main() {
 
 
     println!("cargo:rustc-link-arg=assets/app.res");
-
-    // Get the directory where the build script is running (OUT_DIR)
-    let out_dir = env::var("CARGO_TARGET_DIR").expect("Failed to get CARGO_TARGET_DIR");
-
-    // Define the path to the source bat file
-    let source_bat_file = "copy_to_startup.bat";
-
-    // Construct the destination path using the OUT_DIR
-    let dest_bat_path = Path::new(&out_dir).join("copy_to_startup.bat");
-
-    // Copy the bat file to the output directory
-    fs::copy(source_bat_file, &dest_bat_path).expect("Failed to copy bat file");
 }
