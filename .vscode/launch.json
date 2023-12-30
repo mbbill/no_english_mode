@@ -8,7 +8,7 @@
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/target/debug/no_english.exe",
+            "program": "${workspaceFolder}/target/debug/no_english_mode.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${fileDirname}",

@@ -1,5 +1,8 @@
 #![windows_subsystem = "windows"]
 
+use std::thread;
+use std::time::Duration;
+
 use windows::core::*;
 use windows::Win32::System::LibraryLoader::GetModuleHandleW;
 use windows::Win32::{
@@ -31,6 +34,8 @@ unsafe extern "system" fn event_hook_callback(
         let ime_hwnd = ImmGetDefaultIMEWnd(hwnd);
         // Switch the IME state
         println!("Chinese input method detected, forcing Chinese mode.");
+        // Sometimes the message will miss if we don't sleep for a little while.
+        thread::sleep(Duration::from_millis(10));
         SendMessageW(
             ime_hwnd,
             WM_IME_CONTROL,
